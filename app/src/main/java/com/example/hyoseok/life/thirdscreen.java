@@ -4,7 +4,7 @@ import android.app.Activity;
 
 
 
-public class thirdscreen extends Activity {
+public class thirdscreen {
     private String mQuestion[]={
 
             "1. 2백만명 이상의 인구를 가진 도시 지역에 살고 있습니까? ",
@@ -25,10 +25,11 @@ public class thirdscreen extends Activity {
             "16. 매일 10시간 이상씩 잡니까?",
             "17. 성격이 감정적이고, 공격적이고 쉽게 화를 냅니까?",
             "18. 편안히 생각하고 쉽니까?",
-            "19. 행복합니까? 아니면 불행합니까?",
+            "19. 행복합니까? ",
             "20. 작년에 속도 위반 딱지를 땠습니까? ",
             "21. 여성이고 일년에 한번 산부인과 의사를 찾으십니까?",
             "22. 40세 이상이고 매년 건강 체크를 하십니까?",
+            "결과를 보시겠습니까?"
     };
 
     private String mChoice [][] ={
@@ -53,9 +54,36 @@ public class thirdscreen extends Activity {
             {"YES" , "NO"},
             {"YES" , "NO"},
             {"YES" , "NO"},
-            {"YES" , "NO"}
+            {"YES" , "NO"},
+            {"RESULT", "EXIT"}
 
             //{"두갑이상", "한갑~두갑", "반갑~한갑", "피우지 않음"}   //담배체크
+    };
+
+    private int mScore [][] ={
+            {-2 , 0},
+            {2  , 0},
+            {2,0},
+            {6,0} ,
+            {-4,0} ,
+            {-3,0},
+            {-2,0},
+            {1,0},
+            {2,0},
+            {3,0} ,
+            {5,0} ,
+            {-3,3},
+            {3,0},
+            {4,0},
+            {2,0},
+            {-4,0},
+            {-3,0},
+            {-3,0},
+            {1,0},
+            {-2,0},
+            {2,0},
+            {2,0},
+            {0,0}
     };
 
     public String getQuestion(int a){
@@ -75,7 +103,13 @@ public class thirdscreen extends Activity {
         return choice1;
     }
 
-
-
+    public int getscore_yes(int a){
+        int score1 = mScore[a][0];
+        return score1;
+    }
+    public int getscore_no(int a){
+        int score2 = mScore[a][1];
+        return score2;
+    }
 
 }
